@@ -1,0 +1,23 @@
+<resources>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Score Keeper</string>
+    <string name="teamA_name">Away</string>
+    <string name="teamB_name">Home</string>
+    <string name="three_pt_button_label">+3 points</string>
+    <string name="two_pt_button_label">+2 points</string>
+    <string name="freethrow_button_label">Free Throw</string>
+    <string name="reset_button_label">Reset All</string>
+    <string name="homepage_header">Select a sport</string>
+    <string name="homepage_button1_label">Baseball</string>
+    <string name="homepage_button2_label">Basketball</string>
+    <string name="homepage_button3_label">Football</string>
+    <string name="fb_start_score">00</string>
+    <string name="touchdown_button">Touchdown +6</string>
+    <string name="pat_button">Extra Point +1</string>
+    <string name="two_pt_conv_button">2 Pt Conversion +2</string>
+    <string name="field_goal_button">Field Goal +3</string>
+    <string name="safety_button">Safety +2</string>
+    <string name="baseball_runs_button">Run</string>
+    <string name="baseball_hits_button">Hit</string>
+    <string name="baseball_errors_button">Error</string>
+</resources>
