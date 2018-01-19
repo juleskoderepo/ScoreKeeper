@@ -13,8 +13,8 @@
     <string name="homepage_button3_label">Football</string>
     <string name="fb_start_score">00</string>
     <string name="touchdown_button">Touchdown +6</string>
-    <string name="pat_button">Extra Point +1</string>
-    <string name="two_pt_conv_button">2 Pt Conversion +2</string>
+    <string name="pat_button">Extra Pt +1</string>
+    <string name="two_pt_conv_button">2 Pt Conv +2</string>
     <string name="field_goal_button">Field Goal +3</string>
     <string name="safety_button">Safety +2</string>
     <string name="baseball_runs_button">Run</string>
