@@ -19,8 +19,8 @@ public class BaseballCounterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baseball_counter);
-    }
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -42,6 +42,92 @@ public class BaseballCounterActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * This method is called when the activity is restarted to restore the
+     * saved state of the activity including scoring parameters and display values.
+     * @param savedInstanceState
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        runsTeamA = savedInstanceState.getInt("runsAVar");
+        hitsTeamA = savedInstanceState.getInt("hitsAVar");
+        errorsTeamA = savedInstanceState.getInt("errorsAVar");
+
+        runsTeamB = savedInstanceState.getInt("runsBVar");
+        hitsTeamB = savedInstanceState.getInt("hitsBVar");
+        errorsTeamB = savedInstanceState.getInt("errorsBVar");
+
+        final TextView runsAView = (TextView) findViewById(R.id.team_a_runs_text);
+        CharSequence runsAText = savedInstanceState.getCharSequence("savedRunsAText");
+        runsAView.setText(runsAText);
+
+        final TextView hitsAView = (TextView) findViewById(R.id.team_a_hits_text);
+        CharSequence hitsAText = savedInstanceState.getCharSequence("savedHitsAText");
+        hitsAView.setText(hitsAText);
+
+        final TextView errorsAView = (TextView) findViewById(R.id.team_a_errors_text);
+        CharSequence errorsAText = savedInstanceState.getCharSequence("savedErrorsAText");
+        errorsAView.setText(errorsAText);
+
+        final TextView runsBView = (TextView) findViewById(R.id.team_b_runs_text);
+        CharSequence runsBText = savedInstanceState.getCharSequence("savedRunsBText");
+        runsBView.setText(runsBText);
+
+        final TextView hitsBView = (TextView) findViewById(R.id.team_b_hits_text);
+        CharSequence hitsBText = savedInstanceState.getCharSequence("savedHitsBText");
+        hitsBView.setText(hitsBText);
+
+        final TextView errorsBView = (TextView) findViewById(R.id.team_b_errors_text);
+        CharSequence errorsBText = savedInstanceState.getCharSequence("savedErrorsBText");
+        errorsBView.setText(errorsBText);
+    }
+
+    /**
+     * This method is called in order to retain the state of the values for each
+     * scoring parameter and the values displayed in the app prior to the activity
+     * being killed.
+     * @param outState
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("runsAVar",runsTeamA);
+        outState.putInt("hitsAVar",hitsTeamA);
+        outState.putInt("errorsAVar",errorsTeamA);
+
+        outState.putInt("runsBVar",runsTeamB);
+        outState.putInt("hitsBVar",hitsTeamB);
+        outState.putInt("errorsBVar",errorsTeamB);
+
+        final TextView runsAView = (TextView) findViewById(R.id.team_a_runs_text);
+        CharSequence runsAText = runsAView.getText();
+        outState.putCharSequence("savedRunsAText",runsAText);
+
+        final TextView hitsAView = (TextView) findViewById(R.id.team_a_hits_text);
+        CharSequence hitsAText = hitsAView.getText();
+        outState.putCharSequence("savedHitsAText",hitsAText);
+
+        final TextView errorsAView = (TextView) findViewById(R.id.team_a_errors_text);
+        CharSequence errorsAText = errorsAView.getText();
+        outState.putCharSequence("savedErrorsAText",errorsAText);
+
+        final TextView runsBView = (TextView) findViewById(R.id.team_b_runs_text);
+        CharSequence runsBText = runsBView.getText();
+        outState.putCharSequence("savedRunsBText",runsBText);
+
+        final TextView hitsBView = (TextView) findViewById(R.id.team_b_hits_text);
+        CharSequence hitsBText = hitsBView.getText();
+        outState.putCharSequence("savedHitsBText",hitsBText);
+
+        final TextView errorsBView = (TextView) findViewById(R.id.team_b_errors_text);
+        CharSequence errorsBText = errorsBView.getText();
+        outState.putCharSequence("savedErrorsBText",errorsBText);
+
     }
 
     /**

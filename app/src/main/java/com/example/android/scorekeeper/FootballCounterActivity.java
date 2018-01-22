@@ -11,10 +11,12 @@ public class FootballCounterActivity extends AppCompatActivity {
     int scoreTeamA = 0;
     int scoreTeamB = 0;
 
+    //Initializes the activity's user interface
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_football_counter);
+
     }
 
     @Override
@@ -37,6 +39,49 @@ public class FootballCounterActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * This method is called when the activity is restarted to restore the
+     * saved state of the activity including scoring parameters and display values.
+     * @param savedInstanceState
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        scoreTeamA = savedInstanceState.getInt("scoreAVar");
+        scoreTeamB = savedInstanceState.getInt("scoreBVar");
+
+        final TextView scoreAView = (TextView) findViewById(R.id.team_a_score);
+        CharSequence scoreAText = savedInstanceState.getCharSequence("savedScoreAText");
+        scoreAView.setText(scoreAText);
+
+        final TextView scoreBView = (TextView) findViewById(R.id.team_b_score);
+        CharSequence scoreBText = savedInstanceState.getCharSequence("savedScoreBText");
+        scoreBView.setText(scoreBText);
+    }
+
+    /**
+     * This method is called in order to retain the state of the values for each
+     * scoring parameter and the values displayed in the app prior to the activity
+     * being killed.
+     * @param outState
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("scoreAVar",scoreTeamA);
+        outState.putInt("scoreBVar",scoreTeamB);
+
+        final TextView scoreAView = (TextView) findViewById(R.id.team_a_score);
+        CharSequence scoreAText = scoreAView.getText();
+        outState.putCharSequence("savedScoreAText",scoreAText);
+
+        final TextView scoreBView = (TextView) findViewById(R.id.team_b_score);
+        CharSequence scoreBText = scoreBView.getText();
+        outState.putCharSequence("savedScoreBText",scoreBText);
     }
 
     /**
@@ -67,7 +112,7 @@ public class FootballCounterActivity extends AppCompatActivity {
 
     /**
      * This method is called when clicking one of the score buttons
-     * for Team A.
+     * for Team B.
      */
 
     public void incrementScoreTeamB(View view){
@@ -109,16 +154,16 @@ public class FootballCounterActivity extends AppCompatActivity {
      * Displays the given score for Team A.
      */
     public void displayForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
-        scoreView.setText(String.format("%02d",score));
+        TextView scoreAView = (TextView) findViewById(R.id.team_a_score);
+        scoreAView.setText(String.format("%02d",score));
     }
 
     /**
      * Displays the given score for Team B.
      */
     public void displayForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
-        scoreView.setText(String.format("%02d",score));
+        TextView scoreBView = (TextView) findViewById(R.id.team_b_score);
+        scoreBView.setText(String.format("%02d",score));
     }
 
 }

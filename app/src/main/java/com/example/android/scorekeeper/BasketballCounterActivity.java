@@ -40,6 +40,49 @@ public class BasketballCounterActivity extends AppCompatActivity {
     }
 
     /**
+     * This method is called when the activity is restarted to restore the
+     * saved state of the activity including scoring parameters and display values.
+     * @param savedInstanceState
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        scoreTeamA = savedInstanceState.getInt("scoreAVar");
+        scoreTeamB = savedInstanceState.getInt("scoreBVar");
+
+        final TextView scoreAView = (TextView) findViewById(R.id.team_a_score);
+        CharSequence scoreAText = savedInstanceState.getCharSequence("savedScoreAText");
+        scoreAView.setText(scoreAText);
+
+        final TextView scoreBView = (TextView) findViewById(R.id.team_b_score);
+        CharSequence scoreBText = savedInstanceState.getCharSequence("savedScoreBText");
+        scoreBView.setText(scoreBText);
+    }
+
+    /**
+     * This method is called in order to retain the state of the values for each
+     * scoring parameter and the values displayed in the app prior to the activity
+     * being killed.
+     * @param outState
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("scoreAVar",scoreTeamA);
+        outState.putInt("scoreBVar",scoreTeamB);
+
+        final TextView scoreAView = (TextView) findViewById(R.id.team_a_score);
+        CharSequence scoreAText = scoreAView.getText();
+        outState.putCharSequence("savedScoreAText",scoreAText);
+
+        final TextView scoreBView = (TextView) findViewById(R.id.team_b_score);
+        CharSequence scoreBText = scoreBView.getText();
+        outState.putCharSequence("savedScoreBText",scoreBText);
+    }
+
+    /**
      * This method is called when clicking one of the score buttons
      * for Team A.
      */
