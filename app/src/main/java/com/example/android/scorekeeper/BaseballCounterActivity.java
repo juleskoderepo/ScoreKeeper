@@ -47,7 +47,8 @@ public class BaseballCounterActivity extends AppCompatActivity {
     /**
      * This method is called when the activity is restarted to restore the
      * saved state of the activity including scoring parameters and display values.
-     * @param savedInstanceState
+     * @param savedInstanceState Bundle containing scores and game information
+     *                           to be restored.
      */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -61,27 +62,27 @@ public class BaseballCounterActivity extends AppCompatActivity {
         hitsTeamB = savedInstanceState.getInt("hitsBVar");
         errorsTeamB = savedInstanceState.getInt("errorsBVar");
 
-        final TextView runsAView = (TextView) findViewById(R.id.team_a_runs_text);
+        final TextView runsAView = findViewById(R.id.team_a_runs_text);
         CharSequence runsAText = savedInstanceState.getCharSequence("savedRunsAText");
         runsAView.setText(runsAText);
 
-        final TextView hitsAView = (TextView) findViewById(R.id.team_a_hits_text);
+        final TextView hitsAView = findViewById(R.id.team_a_hits_text);
         CharSequence hitsAText = savedInstanceState.getCharSequence("savedHitsAText");
         hitsAView.setText(hitsAText);
 
-        final TextView errorsAView = (TextView) findViewById(R.id.team_a_errors_text);
+        final TextView errorsAView = findViewById(R.id.team_a_errors_text);
         CharSequence errorsAText = savedInstanceState.getCharSequence("savedErrorsAText");
         errorsAView.setText(errorsAText);
 
-        final TextView runsBView = (TextView) findViewById(R.id.team_b_runs_text);
+        final TextView runsBView = findViewById(R.id.team_b_runs_text);
         CharSequence runsBText = savedInstanceState.getCharSequence("savedRunsBText");
         runsBView.setText(runsBText);
 
-        final TextView hitsBView = (TextView) findViewById(R.id.team_b_hits_text);
+        final TextView hitsBView = findViewById(R.id.team_b_hits_text);
         CharSequence hitsBText = savedInstanceState.getCharSequence("savedHitsBText");
         hitsBView.setText(hitsBText);
 
-        final TextView errorsBView = (TextView) findViewById(R.id.team_b_errors_text);
+        final TextView errorsBView = findViewById(R.id.team_b_errors_text);
         CharSequence errorsBText = savedInstanceState.getCharSequence("savedErrorsBText");
         errorsBView.setText(errorsBText);
     }
@@ -90,7 +91,8 @@ public class BaseballCounterActivity extends AppCompatActivity {
      * This method is called in order to retain the state of the values for each
      * scoring parameter and the values displayed in the app prior to the activity
      * being killed.
-     * @param outState
+     * @param outState Bundle to which instance of scores and game information
+     *                 will be saved.
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -104,27 +106,27 @@ public class BaseballCounterActivity extends AppCompatActivity {
         outState.putInt("hitsBVar",hitsTeamB);
         outState.putInt("errorsBVar",errorsTeamB);
 
-        final TextView runsAView = (TextView) findViewById(R.id.team_a_runs_text);
+        final TextView runsAView = findViewById(R.id.team_a_runs_text);
         CharSequence runsAText = runsAView.getText();
         outState.putCharSequence("savedRunsAText",runsAText);
 
-        final TextView hitsAView = (TextView) findViewById(R.id.team_a_hits_text);
+        final TextView hitsAView = findViewById(R.id.team_a_hits_text);
         CharSequence hitsAText = hitsAView.getText();
         outState.putCharSequence("savedHitsAText",hitsAText);
 
-        final TextView errorsAView = (TextView) findViewById(R.id.team_a_errors_text);
+        final TextView errorsAView = findViewById(R.id.team_a_errors_text);
         CharSequence errorsAText = errorsAView.getText();
         outState.putCharSequence("savedErrorsAText",errorsAText);
 
-        final TextView runsBView = (TextView) findViewById(R.id.team_b_runs_text);
+        final TextView runsBView = findViewById(R.id.team_b_runs_text);
         CharSequence runsBText = runsBView.getText();
         outState.putCharSequence("savedRunsBText",runsBText);
 
-        final TextView hitsBView = (TextView) findViewById(R.id.team_b_hits_text);
+        final TextView hitsBView = findViewById(R.id.team_b_hits_text);
         CharSequence hitsBText = hitsBView.getText();
         outState.putCharSequence("savedHitsBText",hitsBText);
 
-        final TextView errorsBView = (TextView) findViewById(R.id.team_b_errors_text);
+        final TextView errorsBView = findViewById(R.id.team_b_errors_text);
         CharSequence errorsBText = errorsBView.getText();
         outState.putCharSequence("savedErrorsBText",errorsBText);
 
@@ -214,7 +216,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      * Displays the given score for Team A.
      */
     public void displayRunsForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_runs_text);
+        TextView scoreView = findViewById(R.id.team_a_runs_text);
         scoreView.setText(String.format("%02d",score));
     }
 
@@ -222,7 +224,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      * Displays the given score for Team B.
      */
     public void displayRunsForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_runs_text);
+        TextView scoreView = findViewById(R.id.team_b_runs_text);
         scoreView.setText(String.format("%02d",score));
     }
 
@@ -230,7 +232,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      * Displays the hits for Team A.
      */
     public void displayHitsForTeamA(int hits) {
-        TextView hitsView = (TextView) findViewById(R.id.team_a_hits_text);
+        TextView hitsView = findViewById(R.id.team_a_hits_text);
         hitsView.setText(String.format("%02d",hits));
     }
 
@@ -238,7 +240,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      * Displays the hits for Team B.
      */
     public void displayHitsForTeamB(int hits) {
-        TextView hitsView = (TextView) findViewById(R.id.team_b_hits_text);
+        TextView hitsView = findViewById(R.id.team_b_hits_text);
         hitsView.setText(String.format("%02d",hits));
     }
 
@@ -246,7 +248,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      * Displays the errors for Team A.
      */
     public void displayErrorsForTeamA(int e) {
-        TextView eView = (TextView) findViewById(R.id.team_a_errors_text);
+        TextView eView = findViewById(R.id.team_a_errors_text);
         eView.setText(String.format("%02d",e));
     }
 
@@ -254,7 +256,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      * Displays the hits for Team B.
      */
     public void displayErrorsForTeamB(int e) {
-        TextView eView = (TextView) findViewById(R.id.team_b_errors_text);
+        TextView eView = findViewById(R.id.team_b_errors_text);
         eView.setText(String.format("%02d", e));
     }
 

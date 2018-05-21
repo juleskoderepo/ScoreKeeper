@@ -20,4 +20,10 @@
     <string name="baseball_runs_button">Run</string>
     <string name="baseball_hits_button">Hit</string>
     <string name="baseball_errors_button">Error</string>
+    <string name="baseball_sb_runs_column">R</string>
+    <string name="baseball_sb_hits_column">H</string>
+    <string name="baseball_sb_errors_column">E</string>
+    <string name="baseball_default_scoreboard">00</string>
+    <string name="basketball_default_score">000</string>
+
 </resources>

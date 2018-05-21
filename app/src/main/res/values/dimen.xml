@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_scr_hdr_padding">24dp</dimen>
+    <dimen name="button_marginBottom">8dp</dimen>
+    <dimen name="button_marginLeftRight">24dp</dimen>
+    <dimen name="hdr_image_marginBottomTop">8dp</dimen>
+    <dimen name="hdr_image_layout_width">90dp</dimen>
+    <dimen name="hdr_image_layout_height">90dp</dimen>
+    <dimen name="bsb_label_padding">16dp</dimen>
+    <dimen name="bsb_score_label_paddingTop">36dp</dimen>
+    <dimen name="bsb_score_textSize">24sp</dimen>
+    <dimen name="bsb_score_marginBottom">16dp</dimen>
+    <dimen name="bsb_score_marginTop">8dp</dimen>
+    <dimen name="bsb_score_padding">4dp</dimen>
+    <dimen name="bsb_col_textSize">14sp</dimen>
+    <dimen name="reset_marginLeftRight">22dp</dimen>
+    <dimen name="reset_marginTop">16dp</dimen>
+    <dimen name="team_columnHdr_padding">16dp</dimen>
+    <dimen name="team_columnHdr_textSize">14sp</dimen>
+    <dimen name="team_column_layoutWidth">0dp</dimen>
+    <dimen name="team_column_layoutWeight">1</dimen>
+    <dimen name="bkb_score_marginBottom">24dp</dimen>
+    <dimen name="score_textSize">56sp</dimen>
+    <dimen name="vertical_line_width">1dp</dimen>
+    <dimen name="vertical_line_margin">16dp</dimen>
+    <dimen name="fb_score_marginBottom">24dp</dimen>
+</resources>

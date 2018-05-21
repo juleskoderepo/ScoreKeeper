@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorTeamColumnHdr">#616161</color>
+    <color name="colorScoreBackground">#000000</color>
+    <color name="colorScoreText">#FFFFFF</color>
+    <color name="colorVerticalLine">@android:color/darker_gray</color>
 </resources>

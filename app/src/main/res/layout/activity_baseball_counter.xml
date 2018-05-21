@@ -8,21 +8,22 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/baseball_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/hdr_image_marginBottomTop"
+            android:layout_marginTop="@dimen/hdr_image_marginBottomTop"
             android:gravity="center">
 
             <ImageView
                 android:id="@+id/baseball_image"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:src="@drawable/baseball" />
+                android:layout_width="@dimen/hdr_image_layout_width"
+                android:layout_height="@dimen/hdr_image_layout_height"
+                android:src="@drawable/baseball"
+                tools:ignore="ContentDescription" />
         </LinearLayout>
 
         <RelativeLayout
@@ -42,21 +43,21 @@
                     android:id="@+id/sb_teamA_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:paddingTop="36dp"
+                    android:paddingBottom="@dimen/bsb_label_padding"
+                    android:paddingLeft="@dimen/bsb_label_padding"
+                    android:paddingRight="@dimen/bsb_label_padding"
+                    android:paddingTop="@dimen/bsb_score_label_paddingTop"
                     android:text="@string/teamA_name"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/sb_teamB_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="16dp"
+                    android:padding="@dimen/bsb_label_padding"
                     android:text="@string/teamB_name"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -72,34 +73,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="R"
-                    android:textSize="24sp"
+                    android:text="@string/baseball_sb_runs_column"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/team_a_runs_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="@dimen/bsb_score_marginBottom"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:padding="4dp"
-                    android:text="00"
+                    android:padding="@dimen/bsb_score_padding"
+                    android:text="@string/baseball_default_scoreboard"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/team_b_runs_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/bsb_score_marginTop"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:padding="4dp"
-                    android:text="00"
+                    android:padding="@dimen/bsb_score_padding"
+                    android:text="@string/baseball_default_scoreboard"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -107,6 +108,7 @@
                 android:id="@+id/hits_column_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/runs_column_text"
                 android:layout_toRightOf="@id/runs_column_text"
                 android:orientation="vertical">
 
@@ -114,34 +116,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="H"
-                    android:textSize="24sp"
+                    android:text="@string/baseball_sb_hits_column"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/team_a_hits_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="@dimen/bsb_score_marginBottom"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:padding="4dp"
-                    android:text="00"
+                    android:padding="@dimen/bsb_score_padding"
+                    android:text="@string/baseball_default_scoreboard"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/team_b_hits_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/bsb_score_marginTop"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:padding="4dp"
-                    android:text="00"
+                    android:padding="@dimen/bsb_score_padding"
+                    android:text="@string/baseball_default_scoreboard"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -149,6 +151,7 @@
                 android:id="@+id/errors_column_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/hits_column_text"
                 android:layout_toRightOf="@id/hits_column_text"
                 android:orientation="vertical">
 
@@ -156,34 +159,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="E"
-                    android:textSize="24sp"
+                    android:text="@string/baseball_sb_errors_column"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/team_a_errors_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="@dimen/bsb_score_marginBottom"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:padding="4dp"
-                    android:text="00"
+                    android:padding="@dimen/bsb_score_padding"
+                    android:text="@string/baseball_default_scoreboard"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/team_b_errors_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/bsb_score_marginTop"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:padding="4dp"
-                    android:text="00"
+                    android:padding="@dimen/bsb_score_padding"
+                    android:text="@string/baseball_default_scoreboard"
                     android:textColor="@android:color/white"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/bsb_score_textSize"
                     android:textStyle="bold" />
             </LinearLayout>
         </RelativeLayout>
@@ -196,28 +199,27 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/team_column_layoutWidth"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@dimen/team_column_layoutWeight"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:padding="16dp"
+                    android:padding="@dimen/team_columnHdr_padding"
                     android:text="@string/teamA_name"
-                    android:textColor="#616161"
-                    android:textSize="14sp" />
+                    android:textColor="@color/colorTeamColumnHdr"
+                    android:textSize="@dimen/bsb_col_textSize" />
 
                 <Button
                     android:id="@+id/team_a_runs_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="@dimen/button_marginBottom"
+                    android:layout_marginLeft="@dimen/button_marginLeftRight"
+                    android:layout_marginRight="@dimen/button_marginLeftRight"
                     android:onClick="incrementRuns"
                     android:text="@string/baseball_runs_button"
                     android:textStyle="bold" />
@@ -226,9 +228,9 @@
                     android:id="@+id/team_a_hits_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="@dimen/button_marginBottom"
+                    android:layout_marginLeft="@dimen/button_marginLeftRight"
+                    android:layout_marginRight="@dimen/button_marginLeftRight"
                     android:onClick="incrementHits"
                     android:text="@string/baseball_hits_button"
                     android:textStyle="bold" />
@@ -237,42 +239,41 @@
                     android:id="@+id/team_a_errors_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_marginLeft="@dimen/button_marginLeftRight"
+                    android:layout_marginRight="@dimen/button_marginLeftRight"
                     android:onClick="incrementErrors"
                     android:text="@string/baseball_errors_button"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <View
-                android:layout_width="1dp"
+                android:layout_width="@dimen/vertical_line_width"
                 android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray" />
+                android:layout_marginTop="@dimen/vertical_line_margin"
+                android:background="@color/colorVerticalLine" />
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/team_column_layoutWidth"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@dimen/team_column_layoutWeight"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:padding="16dp"
+                    android:padding="@dimen/team_columnHdr_padding"
                     android:text="@string/teamB_name"
-                    android:textColor="#616161"
-                    android:textSize="14sp" />
+                    android:textColor="@color/colorTeamColumnHdr"
+                    android:textSize="@dimen/bsb_col_textSize" />
 
                 <Button
                     android:id="@+id/team_b_runs_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="@dimen/button_marginBottom"
+                    android:layout_marginLeft="@dimen/button_marginLeftRight"
+                    android:layout_marginRight="@dimen/button_marginLeftRight"
                     android:onClick="incrementRuns"
                     android:text="@string/baseball_runs_button"
                     android:textStyle="bold" />
@@ -281,9 +282,9 @@
                     android:id="@+id/team_b_hits_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="@dimen/button_marginBottom"
+                    android:layout_marginLeft="@dimen/button_marginLeftRight"
+                    android:layout_marginRight="@dimen/button_marginLeftRight"
                     android:onClick="incrementHits"
                     android:text="@string/baseball_hits_button"
                     android:textStyle="bold" />
@@ -292,8 +293,8 @@
                     android:id="@+id/team_b_errors_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_marginLeft="@dimen/button_marginLeftRight"
+                    android:layout_marginRight="@dimen/button_marginLeftRight"
                     android:onClick="incrementErrors"
                     android:text="@string/baseball_errors_button"
                     android:textStyle="bold" />
@@ -305,7 +306,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_below="@id/baseball_body_linearlayout"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/reset_marginTop"
             android:gravity="center_horizontal">
 
             <Button
@@ -313,9 +314,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="22dp"
-                android:layout_marginRight="22dp"
+                android:layout_marginBottom="@dimen/button_marginBottom"
+                android:layout_marginLeft="@dimen/reset_marginLeftRight"
+                android:layout_marginRight="@dimen/reset_marginLeftRight"
                 android:onClick="resetScoreboard"
                 android:text="@string/reset_button_label"
                 android:textStyle="bold" />
