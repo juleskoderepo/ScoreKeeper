@@ -13,8 +13,8 @@
         android:padding="@dimen/main_scr_hdr_padding"
         android:text="@string/homepage_header"
         android:textAllCaps="true"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textColor="@color/colorTextDefault"
+        android:textSize="@dimen/main_scr_textSize"
         android:textStyle="bold" />
 
     <Button

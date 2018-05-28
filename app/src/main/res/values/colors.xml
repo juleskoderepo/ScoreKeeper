@@ -7,4 +7,5 @@
     <color name="colorScoreBackground">#000000</color>
     <color name="colorScoreText">#FFFFFF</color>
     <color name="colorVerticalLine">@android:color/darker_gray</color>
+    <color name="colorTextDefault">#000000</color>
 </resources>

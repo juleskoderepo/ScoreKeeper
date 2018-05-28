@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="main_scr_hdr_padding">24dp</dimen>
+    <dimen name="main_scr_textSize">16sp</dimen>
     <dimen name="button_marginBottom">8dp</dimen>
     <dimen name="button_marginLeftRight">24dp</dimen>
     <dimen name="hdr_image_marginBottomTop">8dp</dimen>

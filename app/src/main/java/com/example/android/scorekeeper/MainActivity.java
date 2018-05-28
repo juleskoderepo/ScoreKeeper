@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.TextView;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Locate the basketball button in activity_main.xml
-        button1 = (Button) findViewById(R.id.homepage_button1);
+        button1 = findViewById(R.id.homepage_button1);
 
         //Capture basketball button click
         button1.setOnClickListener(new OnClickListener(){
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Locate the basketball button in activity_main.xml
-        button2 = (Button) findViewById(R.id.homepage_button2);
+        button2 = findViewById(R.id.homepage_button2);
 
         //Capture basketball button click
         button2.setOnClickListener(new OnClickListener(){
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Locate the basketball button in activity_main.xml
-        button3 = (Button) findViewById(R.id.homepage_button3);
+        button3 = findViewById(R.id.homepage_button3);
 
         //Capture basketball button click
         button3.setOnClickListener(new OnClickListener(){

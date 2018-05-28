@@ -14,6 +14,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
     int hitsTeamB = 0;
     int errorsTeamA = 0;
     int errorsTeamB = 0;
+    String score_format = getString(R.string.format_two_digit_score);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -217,7 +218,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      */
     public void displayRunsForTeamA(int score) {
         TextView scoreView = findViewById(R.id.team_a_runs_text);
-        scoreView.setText(String.format("%02d",score));
+        scoreView.setText(String.format(score_format,score));
     }
 
     /**
@@ -225,7 +226,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      */
     public void displayRunsForTeamB(int score) {
         TextView scoreView = findViewById(R.id.team_b_runs_text);
-        scoreView.setText(String.format("%02d",score));
+        scoreView.setText(String.format(score_format,score));
     }
 
     /**
@@ -233,7 +234,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      */
     public void displayHitsForTeamA(int hits) {
         TextView hitsView = findViewById(R.id.team_a_hits_text);
-        hitsView.setText(String.format("%02d",hits));
+        hitsView.setText(String.format(score_format,hits));
     }
 
     /**
@@ -241,7 +242,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      */
     public void displayHitsForTeamB(int hits) {
         TextView hitsView = findViewById(R.id.team_b_hits_text);
-        hitsView.setText(String.format("%02d",hits));
+        hitsView.setText(String.format(score_format,hits));
     }
 
     /**
@@ -249,7 +250,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      */
     public void displayErrorsForTeamA(int e) {
         TextView eView = findViewById(R.id.team_a_errors_text);
-        eView.setText(String.format("%02d",e));
+        eView.setText(String.format(score_format,e));
     }
 
     /**
@@ -257,7 +258,7 @@ public class BaseballCounterActivity extends AppCompatActivity {
      */
     public void displayErrorsForTeamB(int e) {
         TextView eView = findViewById(R.id.team_b_errors_text);
-        eView.setText(String.format("%02d", e));
+        eView.setText(String.format(score_format, e));
     }
 
 }

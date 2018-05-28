@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class FootballCounterActivity extends AppCompatActivity {
     int scoreTeamA = 0;
     int scoreTeamB = 0;
+    String score_format = getString(R.string.format_two_digit_score);
 
     //Initializes the activity's user interface
     @Override
@@ -157,7 +158,7 @@ public class FootballCounterActivity extends AppCompatActivity {
      */
     public void displayForTeamA(int score) {
         TextView scoreAView = findViewById(R.id.team_a_score);
-        scoreAView.setText(String.format("%02d",score));
+        scoreAView.setText(String.format(score_format,score));
     }
 
     /**
@@ -165,7 +166,7 @@ public class FootballCounterActivity extends AppCompatActivity {
      */
     public void displayForTeamB(int score) {
         TextView scoreBView = findViewById(R.id.team_b_score);
-        scoreBView.setText(String.format("%02d",score));
+        scoreBView.setText(String.format(score_format,score));
     }
 
 }

@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class BasketballCounterActivity extends AppCompatActivity {
     int scoreTeamA = 0;
     int scoreTeamB = 0;
+    String score_format = getString(R.string.format_three_digit_score);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,7 +143,7 @@ public class BasketballCounterActivity extends AppCompatActivity {
      */
     public void displayForTeamA(int score) {
         TextView scoreView = findViewById(R.id.team_a_score);
-        scoreView.setText(String.format("%03d",score));
+        scoreView.setText(String.format(score_format,score));
     }
 
     /**
@@ -150,7 +151,7 @@ public class BasketballCounterActivity extends AppCompatActivity {
      */
     public void displayForTeamB(int score) {
         TextView scoreView = findViewById(R.id.team_b_score);
-        scoreView.setText(String.format("%03d",score));
+        scoreView.setText(String.format(score_format,score));
     }
 
 }

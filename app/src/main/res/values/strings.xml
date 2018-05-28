@@ -25,5 +25,7 @@
     <string name="baseball_sb_errors_column">E</string>
     <string name="baseball_default_scoreboard">00</string>
     <string name="basketball_default_score">000</string>
+    <string name="format_two_digit_score">%02d</string>
+    <string name="format_three_digit_score">%03d</string>
 
 </resources>
